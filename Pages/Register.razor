@@ -1,0 +1,20 @@
+@page "/Register"
+
+<a href="/">Go back</a>
+
+<h1>Register</h1>
+
+<input type="email" placeholder="EMAIL" @bind="EMAIL"><br>
+<input type="password" placeholder="SENHA" @bind="PASSWORD"><br>
+<input type="number" placeholder="Celular" @bind="PHONE"><br>
+<input type="number" placeholder="CPF" @bind="CPF"><br>
+
+
+@code{
+    PasswordHasher
+
+    string? EMAIL;
+    string? PASSWORD;
+    int? PHONE;
+    int? CPF;
+}
