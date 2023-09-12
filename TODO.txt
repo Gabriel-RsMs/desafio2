@@ -1,0 +1,4 @@
+conectar as 2 aplicacoes
+migrar o banco do express pro azure data studio
+melhorar o algoritimo
+interagir com a API
