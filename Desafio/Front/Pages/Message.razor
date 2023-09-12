@@ -1,0 +1,26 @@
+@page "/message"
+
+<PageTitle>Registrar</PageTitle>
+
+<a href="/Home">Go back</a>
+<h1>Register</h1>
+<form>
+    <label for="Message">Mensagem</label>
+    <input type="text" id="message" @bind="message" required/>
+    <br>
+    <label for="Number">Number</label>
+    <input type="tel" id="Number" @bind="Number" required/>
+</form>
+<p>@rounded</p>
+
+@code{
+    string message;
+    int Number;
+    int rounded;
+
+    int CalcExpense(string Message){
+        float res = (float)Message.Length/153;
+        rounded = (int)Math.Ceiling(res);
+        return rounded;
+    }
+}

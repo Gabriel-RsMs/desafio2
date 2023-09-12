@@ -1,0 +1,35 @@
+﻿@page "/Register"
+
+<PageTitle>Registrar</PageTitle>
+
+<a href="/Login">Go back</a>
+
+<h1>Register</h1>
+<form>
+    <label for="email">Email</label>
+    <input type="email" id="email" @bind="user.Email" required/>
+    <br>
+    <label for="Password">Senha</label>
+    <input type="password" id="Password" @bind="password" required/>
+    <br>
+    <label for="PHONE">Celular</label>
+    <input type="tel" id="PHONE" @bind="user.PHONE" required/>
+    <br>
+    <label for="CPF">CPF</label>
+    <input type="number" id="CPF" @bind="user.CPF" required/>
+    <br>
+    <button @onclick="CallCreateUser">Enviar</button>
+</form>
+<p>@user.Email</p>
+<p>@password</p>
+
+@code {
+    private string password = string.Empty;
+    private User user = new();
+
+    private void CallCreateUser()
+    {
+        // Call your method to create the user here
+        Model.CreateUser(user, password);   
+    }
+}
