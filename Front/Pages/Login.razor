@@ -1,0 +1,13 @@
+@page "/Login"
+
+<PageTitle>Login</PageTitle>
+
+<h1>Login</h1>
+
+<input placeholder="EMAIL" @bind="EMAIL">
+<input placeholder="SENHA" @bind="SENHA">
+<a href="Register">Register</a>
+@code{
+    string? EMAIL;
+    string? SENHA;
+}
