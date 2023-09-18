@@ -1,4 +1,6 @@
+ver como acessar data do jwt
+organizar o site para q qnd vc se cadastrar e qnd vc logar n aparecer mais de se logar :3
+estudar a API da comtele
+assim como achar meu acesso para a plataforma kkkkk
+assim ja integrar e ir polindo e ajustando o projeto de acordo com os erros q aparecem
 migrar o banco do express pro azure data studio
-melhorar o algoritimo
-interagir com a API
-achar e colocar a verdadeira API do curso da moura no git ou no drive
