@@ -1,7 +1,9 @@
 ver como acessar data do jwt
 organizar o site para q qnd vc se cadastrar e qnd vc logar n aparecer mais de se logar :3
 estudar a API da comtele
-
+fazer o campo de texto
+fazer o calculo de debito de creditos
+fazer sistema de credito mais facilitado para o admin
 assim como achar meu acesso para a plataforma kkkkk
 assim ja integrar e ir polindo e ajustando o projeto de acordo com os erros q aparecem
 migrar o banco do express pro azure data studio
