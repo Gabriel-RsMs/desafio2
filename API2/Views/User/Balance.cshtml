@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Balance";
+}
+<p>dsdda</p>
+<p> @ViewData["Balance"] creditos</p>
+<br>
+<span id="counter">@ViewBag.Credits</span> serao cobrados
+<br>
+
+<label for="w3review">Escreva sua mensagem</label>
+<BR>
+<textarea id="messageInput" oninput="updateCounter()" name="messageInput" rows="4" cols="80">
+</textarea>
+<script>
+    function updateCounter() {
+        var messageInput = document.getElementById("messageInput");
+        var counter = document.getElementById("counter");
+
+        var textLength = messageInput.value.length;
+        var credits = Math.ceil(textLength / 153);
+
+        counter.textContent = credits;
+    }
+</script>
