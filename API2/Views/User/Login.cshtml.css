@@ -1,0 +1,61 @@
+.slide-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent; /* Button background color */
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.rounded-rectangle {
+    width: 30px;
+    height: 20px;
+    background-color: #3498db; /* Rounded rectangle color */
+    border-radius: 10px; /* Adjust the radius to your liking */
+    position: absolute;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.ball {
+    width: 30px;
+    height: 30px;
+    background-color: #fff; /* Ball color */
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity 0.3s ease;
+}
+
+.left {
+    left: 5px;
+}
+
+.right {
+    right: 5px;
+}
+
+.slide-left .rounded-rectangle {
+    width: 0;
+}
+
+.slide-left .ball {
+    transform: translateX(100%);
+}
+
+.slide-left .text.left {
+    opacity: 0;
+}
+
+.slide-left .text.right {
+    opacity: 1;
+}

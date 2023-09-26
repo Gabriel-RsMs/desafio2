@@ -1,0 +1,27 @@
+<form id="yourFormId" asp-controller="User" asp-action="GetReportResponse" method="get" onsubmit="return validateDateRange()">
+    <label for="BeginningDate">Data inicial:</label>
+    <input type="date" id="BeginningDate" name="BeginningDate" required>
+    <br />
+    <label for="EndDate">Data final:</label>
+    <input type="date" id="EndDate" name="EndDate" required>
+    <br/>
+    <br/>
+    <button type="submit">Pesquisar</button>
+</form>
+
+<script>
+    function validateDateRange() {
+        var beginningDate = new Date(document.getElementById("BeginningDate").value);
+        var endDate = new Date(document.getElementById("EndDate").value);
+
+        if (beginningDate > endDate) {
+            alert("O periodo inserido e invalido");
+            return false;
+        }
+
+        return true;
+    }
+
+    // Attach the validateDateRange function to the form's onsubmit event
+    document.getElementById("yourFormId").onsubmit = validateDateRange;
+</script>
