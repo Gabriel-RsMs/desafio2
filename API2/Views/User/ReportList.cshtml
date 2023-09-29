@@ -1,0 +1,60 @@
+ @using System.Text.Json
+@{
+    var ID = Context.Session.GetInt32("user.id");
+    string ID_S = ID.ToString();
+    var Response = ViewData["response"] as string;  
+    
+    string jsonString = Response;
+    
+    JsonDocument jsonDoc = JsonDocument.Parse(jsonString);
+
+    JsonElement objectElement = jsonDoc.RootElement.GetProperty("Object");
+
+    string receiver = objectElement[0].GetProperty("Content").GetString();
+}
+<style>
+            th, td {    
+                border: 1px solid black;
+                padding: 8px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    <table border="1">
+    @if (objectElement.ValueKind == JsonValueKind.Array && objectElement.GetArrayLength() == 0)
+    {
+        <tr>
+            <td colspan="7">No response</td>
+        </tr>
+    }
+    else
+    {
+    <tr>
+        <th>Receiver</th>
+        <th>Content</th>
+        <th>Status</th>
+        <th>Scheduled and arrived Date</th>
+        <th>System Message</th>
+        <th>Dlr Status</th>
+        <th>Sender</th>
+    </tr>
+        @foreach (var message in objectElement.EnumerateArray())
+        {
+            @if(message.GetProperty("Sender").GetString() == ID_S){
+            <tr>
+                <td>@message.GetProperty("Receiver").GetString()</td>
+                <td>@message.GetProperty("Content").GetString()</td>
+                <td>@message.GetProperty("Status").GetString()</td>
+                <td>Data marcada: @message.GetProperty("ScheduleDate").GetString()<br>
+                    Data de entrega: @message.GetProperty("RequestDate").GetString()</td>
+                <td>@message.GetProperty("SystemMessage").GetString()</td>
+                <td>@message.GetProperty("DlrStatus").GetString()</td>
+                <td>@message.GetProperty("Sender").GetString()</td>
+            </tr>
+            }
+        }
+    }
+</table>
