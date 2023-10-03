@@ -7,7 +7,7 @@ namespace MessageModel
         public static async Task<string> SendMessageAsync(int ID, string phone_number, string message){
             string url = "https://sms.comtele.com.br/api/v2/send";
             using (HttpClient httpClient = new()){
-                httpClient.DefaultRequestHeaders.Add("auth-key", "7888ffef-72f1-45ce-bd7f-82faf12d7fd6");
+                httpClient.DefaultRequestHeaders.Add("auth-key", "YourAPIKey");
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 string payload = $"{{\"Sender\":\"{ID}\",\"Receivers\":\"{phone_number}\",\"Content\":\"{message}\"}}";
